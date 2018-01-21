@@ -36,7 +36,7 @@ convert input china coordinate to another.
             bd2gcj  : convert BD-09 to GCJ-02
 
     Example:
-        `coord_covert ./test/data/line/multi-polygon.cpg ~/temp/qqqq.shp wgs2gcj`
+        coord_covert ./test/data/line/multi-polygon.shp ~/temp/qqqq.shp wgs2gcj
 
 ```
 
