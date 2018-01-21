@@ -14,7 +14,7 @@
 或者也可以从源码安装：
 ```
 git clone 
-pip install requirements.txt
+pip install -r requirements.txt
 python setup.py install
 ```
 

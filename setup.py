@@ -25,7 +25,7 @@ setup(
     description = u'china mars coordinate convertor.',
     long_description = readme,
     classifiers=[
-        'Development Status :: 1 - Beta',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Intended Audience :: Information Technology',
         'Intended Audience :: Science/Research',
@@ -49,7 +49,7 @@ setup(
     install_requires=inst_reqs,
     entry_points='''
         [console_scripts]
-        coord_covert=coord_convert.coordconvert:convert
+        coord_covert=coord_convert.coordconvert:convertor
     '''
 
 )

@@ -1,13 +1,19 @@
 # -*- coding: utf-8 -*-
 import fiona
 from tqdm import tqdm
-
 import click
 
-from coordconvert.utils import Transform
+from coord_convert.utils import Transform
 
 
 def recur_map(f, data):
+    """递归处理所有坐标
+    
+    Arguments:
+        f {function} -- [apply function]
+        data {collection} -- [fiona collection]
+    """
+
     return[ not type(x) is list and f(x) or recur_map(f, x) for x in data ]
 
 
@@ -15,26 +21,37 @@ def recur_map(f, data):
 @click.argument('src_path', type=click.Path(exists=True))
 @click.argument('dst_path', type=click.Path(exists=False))
 @click.argument('convert_type', type=click.STRING)
-def converter(in_path, out_path, convert_type):
-    """convert input 
-    
-    Arguments:
-        in_path {} -- [description]
-        out_path {[type]} -- [description]
-        convert_type {[type]} -- [description]
-    
-    Raises:
-        TypeError -- [description]
-    
-    Returns:
-        [type] -- [description]
+def convertor(src_path, dst_path, convert_type):
+    """convert input china coordinate to another. 
+
+\b
+    Arguments:  
+
+\b
+        src_path {string} -- [source file path]  
+        dst_path {string} -- [destination file path]  
+        convert_type {string} -- [coordinate convert type, e.g. wgs2bd]   
+
+\b
+            there are six convert type:   
+            wgs2gcj : convert WGS-84 to GCJ-02
+            wgs2bd  : convert WGS-84 to DB-09  
+            gcj2wgs : convert GCJ-02 to WGS-84  
+            gcj2bd  : convert GCJ-02 to BD-09  
+            bd2wgs  : convert BD-09 to WGS-84  
+            bd2gcj  : convert BD-09 to GCJ-02 
+
+    Example:
+
+\b 
+        coord_covert ./test/data/line/multi-polygon.shp ~/temp/qqqq.shp wgs2gcj
     """ 
 
-    with fiona.open(in_path, 'r', encoding='utf-8') as source:
+    with fiona.open(src_path, 'r', encoding='utf-8') as source:
         source_schema = source.schema.copy()
-        with fiona.open(out_path, 'w', encoding='utf-8', **source.meta) as out:
+        with fiona.open(dst_path, 'w', encoding='utf-8', **source.meta) as out:
             transform = Transform()
-            f = lambda x: getattr(transform, convert_type)(x[0], x[1])
+            f = lambda x: getattr(transform, convert_type)(x[0], x[1])  #dynamic call convert func
 
             for fea in tqdm(source):
                 collections = fea['geometry']['coordinates']
@@ -54,10 +71,10 @@ def converter(in_path, out_path, convert_type):
 #     point_path = './test/data/point/point.shp'
 #     line_path = './test/data/line/polyline.shp'
 #     poylygon_path = './test/data/polygon/polygon-2.shp'
-#     out_path = './test/data/point_gcj.shp'
-#     converter(point_path, out_path, 'wgs2gcj')
-#     converter(line_path, out_path, 'wgs2gcj')
-#     converter(poylygon_path, out_path, 'wgs2gcj')
+#     dst_path = './test/data/point_gcj.shp'
+#     converter(point_path, dst_path, 'wgs2gcj')
+#     converter(line_path, dst_path, 'wgs2gcj')
+#     converter(poylygon_path, dst_path, 'wgs2gcj')
 
 
 
