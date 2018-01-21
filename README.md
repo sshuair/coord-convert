@@ -1,6 +1,5 @@
 # China Coordinate Convertor
 
-## Not Finished !!!
 
 [中国火星坐标](https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China)转换命令行工具，用于`WGS-84`(未偏移坐标), `GCJ-02`（国家测绘局、高德、谷歌中国地图）, `BD-09`(百度坐标系)三者之间的互相转换，支持文件格式：
 - ESRI Shapefile
@@ -11,6 +10,7 @@
 ## install
 推荐使用：
 `pip install coord-convert`
+
 或者也可以从源码安装：
 ```
 git clone 
