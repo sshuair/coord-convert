@@ -18,6 +18,11 @@ pip install -r requirements.txt
 python setup.py install
 ```
 
+## Dependencies
+- python3
+- fiona
+- tqdm
+- click
 
 ## 使用方法
 ```
@@ -38,7 +43,7 @@ convert input china coordinate to another.
 
 
     Example:
-        coord_covert wgs2gcj ./test/data/line/multi-polygon.shp ~/temp/qqqq.shp 
+        coord_covert wgs2gcj ./examples/data/polygon/polygon_wgs.shp ~/temp/polygon_gcj.shp 
 
 ```
 
