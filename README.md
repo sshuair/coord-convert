@@ -5,11 +5,7 @@
 - ESRI Shapefile
 - GeoJSON
 
-<figure class="third">
- <img src="http://orbd8upsg.bkt.clouddn.com/coord-convert.png" width = "50%" height = "50%" alt="图片名称" align=center />
- <img src="./examples/assets/polyline.jpg" width = "50%" height = "50%" alt="图片名称" align=center />
- <img src="./examples/assets/polygon.png" width = "50%" height = "50%" alt="图片名称" align=center />
- </figure>
+  <img src="./examples/assets/all.jpg" width = "100%" height = "100%" alt="图片名称" align=center />
 
 ## install
 推荐使用：
