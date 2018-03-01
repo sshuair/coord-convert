@@ -18,22 +18,16 @@ def recur_map(f, data):
 
 
 @click.command()
+@click.argument('convert_type', type=click.STRING)
 @click.argument('src_path', type=click.Path(exists=True))
 @click.argument('dst_path', type=click.Path(exists=False))
-@click.argument('convert_type', type=click.STRING)
 def convertor(src_path, dst_path, convert_type):
     """convert input china coordinate to another. 
 
 \b
     Arguments:  
-
-\b
-        src_path {string} -- [source file path]  
-        dst_path {string} -- [destination file path]  
         convert_type {string} -- [coordinate convert type, e.g. wgs2bd]   
-
 \b
-            there are six convert type:   
             wgs2gcj : convert WGS-84 to GCJ-02
             wgs2bd  : convert WGS-84 to DB-09  
             gcj2wgs : convert GCJ-02 to WGS-84  
@@ -41,10 +35,14 @@ def convertor(src_path, dst_path, convert_type):
             bd2wgs  : convert BD-09 to WGS-84  
             bd2gcj  : convert BD-09 to GCJ-02 
 
+        src_path {string} -- [source file path]  
+        dst_path {string} -- [destination file path]  
+
+
     Example:
 
 \b 
-        coord_covert ./test/data/line/multi-polygon.shp ~/temp/qqqq.shp wgs2gcj
+        coord_covert wgs2gcj ./test/data/line/multi-polygon.shp ~/temp/qqqq.shp 
     """ 
 
     with fiona.open(src_path, 'r', encoding='utf-8') as source:

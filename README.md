@@ -5,8 +5,11 @@
 - ESRI Shapefile
 - GeoJSON
 
+<figure class="third">
  <img src="http://orbd8upsg.bkt.clouddn.com/coord-convert.png" width = "50%" height = "50%" alt="图片名称" align=center />
-
+ <img src="./examples/assets/polyline.jpg" width = "50%" height = "50%" alt="图片名称" align=center />
+ <img src="./examples/assets/polygon.png" width = "50%" height = "50%" alt="图片名称" align=center />
+ </figure>
 
 ## install
 推荐使用：
@@ -14,7 +17,7 @@
 
 或者也可以从源码安装：
 ```
-git clone 
+git clone https://github.com/sshuair/coord-convert.git
 pip install -r requirements.txt
 python setup.py install
 ```
@@ -25,10 +28,8 @@ python setup.py install
 convert input china coordinate to another. 
     
     Arguments:
-        src_path {string} -- [source file path]
-        dst_path {string} -- [destination file path]
         convert_type {string} -- [coordinate convert type, e.g. wgs2bd]
-            there are six convert types:
+
             wgs2gcj : convert WGS-84 to GCJ-02
             wgs2bd  : convert WGS-84 to DB-09
             gcj2wgs : convert GCJ-02 to WGS-84
@@ -36,8 +37,12 @@ convert input china coordinate to another.
             bd2wgs  : convert BD-09 to WGS-84
             bd2gcj  : convert BD-09 to GCJ-02
 
+        src_path {string} -- [source file path]
+        dst_path {string} -- [destination file path]
+
+
     Example:
-        coord_covert ./test/data/line/multi-polygon.shp ~/temp/qqqq.shp wgs2gcj
+        coord_covert wgs2gcj ./test/data/line/multi-polygon.shp ~/temp/qqqq.shp 
 
 ```
 
