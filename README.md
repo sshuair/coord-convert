@@ -34,6 +34,8 @@ from coord_convert.transform import wgs2gcj, wgs2bd, gcj2wgs, gcj2bd, bd2wgs, bd
 lon, lat = 120, 40
 gcj_lon, gcj_lat = wgs2gcj(lon, lat)
 bd_lon, bd_lat = wgs2bd(lon, lat)
+print(gcj_lon, gcj_lat) # the result should be: 120.00567568355486 40.0013047896019
+
 ```
 
 
