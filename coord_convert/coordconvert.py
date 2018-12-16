@@ -3,7 +3,7 @@ import fiona
 from tqdm import tqdm
 import click
 
-from coord_convert.utils import Transform
+from coord_convert.transform import Transform
 
 
 def recur_map(f, data):

@@ -5,7 +5,7 @@
 - ESRI Shapefile
 - GeoJSON
 
-  <img src="./examples/assets/all.jpg" width = "100%" height = "100%" alt="图片名称" align=center />
+  <img src="./assets/all.jpg" width = "100%" height = "100%" alt="图片名称" align=center />
 
 ## install
 推荐使用：
@@ -25,6 +25,26 @@ python setup.py install
 - click
 
 ## 使用方法
+
+### Python API调用
+在python程序中调用相应的坐标转换接口
+
+```python
+from coord_convert.transform import wgs2gcj, wgs2bd, gcj2wgs, gcj2bd, bd2wgs, bd2gcj 
+lon, lat = 120, 40
+gcj_lon, gcj_lat = wgs2gcj(lon, lat)
+bd_lon, bd_lat = wgs2bd(lon, lat)
+```
+
+
+### 命令行调用
+火星坐标转换还支持命令行直接对shp、geojson等文件进行转换，比如
+
+```sh
+coord_convert wgs2gcj tests/data/Polyline/polyline.geojson polyline_gcj.geojson
+```
+
+更详细的用法：
 ```
 convert input china coordinate to another. 
     
