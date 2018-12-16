@@ -38,10 +38,11 @@ bd_lon, bd_lat = wgs2bd(lon, lat)
 
 
 ### 命令行调用
-火星坐标转换还支持命令行直接对shp、geojson等文件进行转换，比如
+火星坐标转换还支持命令行直接对shp、geojson等文件进行转换，比如
 
-```sh
-coord_convert wgs2gcj tests/data/Polyline/polyline.geojson polyline_gcj.geojson
+```bash
+~/github/coord-convert > coord_covert gcj2wgs tests/data/Polyline/polyline.geojson aa.geojson
+100%|██████████████████████████████████████████████████████| 219/219 [00:00<00:00, 550.93it/s]
 ```
 
 更详细的用法：
