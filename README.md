@@ -7,7 +7,7 @@
 
   <img src="./assets/all.jpg" width = "100%" height = "100%" alt="图片名称" align=center />
 
-## install
+## 安装
 推荐使用：
 `pip install coord-convert`
 
@@ -18,7 +18,7 @@ pip install -r requirements.txt
 python setup.py install
 ```
 
-## Dependencies
+## 依赖
 - python3
 - fiona
 - tqdm
