@@ -41,7 +41,7 @@ bd_lon, bd_lat = wgs2bd(lon, lat)
 火星坐标转换还支持命令行直接对shp、geojson等文件进行转换，比如
 
 ```bash
-~/github/coord-convert > coord_covert gcj2wgs tests/data/Polyline/polyline.geojson aa.geojson
+~/temp > coord_covert gcj2wgs tests/data/Polyline/polyline.geojson aa.geojson
 100%|██████████████████████████████████████████████████████| 219/219 [00:00<00:00, 550.93it/s]
 ```
 
