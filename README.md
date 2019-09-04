@@ -1,5 +1,9 @@
 # China Coordinate Convertor
 
+[![Actions Status](https://github.com/sshuair/coord-convert/workflows/pytest/badge.svg)](https://github.com/sshuair/coord-convert/actions)
+[![GitHub stars](https://img.shields.io/github/stars/sshuair/coord-convert)](https://github.com/sshuair/coord-convert/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/sshuair/coord-convert)](https://github.com/sshuair/coord-convert/network)
+[![GitHub license](https://img.shields.io/github/license/sshuair/coord-convert)](https://github.com/sshuair/coord-convert/blob/master/LICENSE)
 
 [中国火星坐标](https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China)转换命令行工具，用于`WGS-84`(未偏移坐标), `GCJ-02`（国家测绘局、高德、谷歌中国地图）, `BD-09`(百度坐标系)三者之间的互相转换，支持文件格式：
 - ESRI Shapefile
@@ -67,8 +71,6 @@ convert input china coordinate to another.
 
 
     Example:
-        coord_covert wgs2gcj ./examples/data/polygon/polygon_wgs.shp ~/temp/polygon_gcj.shp 
+        coord_covert wgs2gcj ./tests/data/polygon/polygon_wgs.shp ~/temp/polygon_gcj.shp 
 
 ```
-
-
