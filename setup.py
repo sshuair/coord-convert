@@ -12,7 +12,7 @@ with open('coord_convert/__init__.py') as f:
 
 # install requirements
 with open('requirements.txt') as f:
-    requirements = f.read.splitlines()
+    requirements = [x.strip() for x in f.readlines()]
 
 # readme
 with open('README.md', encoding='utf-8') as f:
