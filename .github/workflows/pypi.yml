@@ -34,6 +34,6 @@ jobs:
         pytest
     - name: build wheels
       run: |
-        pip install setuptools wheel
+        pip install setuptools wheel twine
         python setup.py sdist bdist_wheel
         python -m twine upload -r pypi --verbose -u ${{ secrets.PYPI_USERNAME }} -p ${{ secrets.PYPI_PASSWORD }}  dist/*
