@@ -11,9 +11,8 @@ with open('coord_convert/__init__.py') as f:
             break
 
 # install requirements
-inst_reqs = [
-    'click', 'tqdm', 'fiona'
-]
+with open('requirements.txt') as f:
+    requirements = f.read.splitlines()
 
 # readme
 with open('README.md', encoding='utf-8') as f:
@@ -24,6 +23,7 @@ setup(
     version = version,
     description = u'china mars coordinate convertor.',
     long_description = readme,
+    long_description_content_type="text/markdown",
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
@@ -32,12 +32,8 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: C',
         'Programming Language :: Cython',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 3',
         'Topic :: Multimedia :: Graphics :: Graphics Conversion',
         'Topic :: Scientific/Engineering :: GIS'],
@@ -46,7 +42,7 @@ setup(
     author_email='sshuair@gmail.com',
     url='https://github.com/sshuair/coord-convert',
     packages = ['coord_convert'],
-    install_requires=inst_reqs,
+    install_requires=requirements,
     entry_points='''
         [console_scripts]
         coord_covert=coord_convert.coordconvert:convertor
